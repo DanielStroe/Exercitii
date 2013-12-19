@@ -4,7 +4,8 @@ program Ex19;
 
 uses
   SysUtils;
-
+const
+   NrElefanti = 100;
 var
   i: Integer;
 resourcestring
@@ -13,10 +14,10 @@ resourcestring
 begin
   Writeln('1 elefant se legana pe o panza de paianjeni');
   Writeln('Si cum panza nu se rupea a mai venit 1 elefant');
-  for i := 2 to 100 do
+  for i := 2 to NrElefanti do
   begin
     Writeln(Format(MesajNrElefanti, [i]));
-    if (i <> 100) then
+    if (i <> NrElefanti) then
       Writeln(Mesaj);
   end;
   Writeln('Si panza s-a rupt...');
