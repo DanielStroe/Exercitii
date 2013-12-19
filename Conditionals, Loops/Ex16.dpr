@@ -15,6 +15,7 @@ const
   SumaTaxareVarsta = 100;
 var
   Varsta, NrAccidente, CostFinal: Integer;
+  SePoateAsigura: Boolean;
 begin
   Write('Introduceti varsta persoanei: ');
   Readln(Varsta);
@@ -24,7 +25,7 @@ begin
     CostFinal := CostInitial + SumaTaxareVarsta
   else
     CostFinal := CostInitial;
-
+  SePoateAsigura := True;
   case NrAccidente of
     0: ;
     1: CostFinal := CostFinal + Cost1Accident;
@@ -32,12 +33,12 @@ begin
     3: CostFinal := CostFinal + Cost3Accidente;
     4: CostFinal := CostFinal + Cost4Accidente;
     5: CostFinal := CostFinal + Cost5Accidente;
-  else begin Writeln('Nu se poate asigura din cauza ca aveti prea multe accidente!');
-      Readln;
-      Exit;
-    end;
+  else SePoateAsigura := False;
   end;
-  Writeln('Cost total = ' + inttostr(CostFinal));
+  if SePoateAsigura then
+    Writeln('Cost total = ' + inttostr(CostFinal))
+  else
+    Writeln('Nu puteti asigura masina din cauza numarului prea mare de accidente!');
   Readln;
 end.
 
