@@ -13,7 +13,7 @@ begin
   for i := 1 to nr do
   begin
     for j := 1 to i do
-      Write(inttostr(j));
+      Write(inttostr(i));
     Writeln;
   end;
   Readln;
