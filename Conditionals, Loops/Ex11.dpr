@@ -18,7 +18,7 @@ begin
     1: begin
         Write(Format(mesaj, ['int']));
         Readln(ValInt);
-        Writeln(inttostr(inc(ValInt)));
+        Writeln(inttostr(ValInt + 1));
       end;
     2: begin
         Write(Format(mesaj, ['double']));
