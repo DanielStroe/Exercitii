@@ -15,6 +15,7 @@ begin
     aux := 1;
     for j := 1 to 2 * n - 1 do
       if ((j >= n - i + 1) and (j <= n + i - 1)) then
+      begin
         if j < n then
         begin
           Write(inttostr(aux));
@@ -27,9 +28,10 @@ begin
             Write(inttostr(aux));
           end
           else
-            Write(inttostr(i))
-        else Write(' ');
-          Writeln;
+            Write(inttostr(i));
+      end
+      else Write(' ');
+    Writeln;
   end;
   for i := n - 1 downto 1 do
   begin
