@@ -21,7 +21,7 @@ begin
     Readln(x);
   end;
   NFactorial := 1;
-  suma := 1; //am pus 1 deoarece este primul termen 1;
+  suma := 1; //am pus 1 deoarece este 1 este primul termen ;
   for i := 1 to n do
   begin
     NFactorial := NFactorial * i;
