@@ -14,11 +14,11 @@ begin
   Readln(an1);
   Write('Introduceti al doilea an: ');
   Readln(an2);
-  if (an1 mod 400 = 0) then
+  if (((an1 mod 4 = 0) and (an1 mod 100 <> 0)) or (an1 mod 400 = 0)) then
     Writeln(Format(mesaj, [1, 'este']))
   else
     Writeln(Format(mesaj, [1, 'nu este']));
-  if (an2 mod 400 = 0) then
+  if (((an2 mod 4 = 0) and (an2 mod 100 <> 0)) or (an2 mod 400 = 0)) then
     Writeln(Format(mesaj, [2, 'este']))
   else
     Writeln(Format(mesaj, [2, 'nu este']));
