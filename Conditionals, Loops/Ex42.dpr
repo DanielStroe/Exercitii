@@ -10,7 +10,8 @@ var
   NrVocA, NrVocE, NrVocI, NrVocO, NrVocU, i, NrLitere: Integer;
   Propozitie: string;
 resourcestring
-  mesaj = 'Vocala %s apare de %d (%s procente) ';
+  Mesaj = 'Vocala %s apare de %d (%s procente) ';
+  MesajNrLitere = 'Propozitia are %d litere ';
 begin
   Write('Propozitia: ');
   Readln(Propozitie);
@@ -35,11 +36,12 @@ begin
       Inc(NrLitere);
     end;
   end;
-  Writeln(Format(mesaj, ['a', NrVocA, FloatToStr((NrVocA / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['e', NrVocE, FloatToStr((NrVocE / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['i', NrVocI, FloatToStr((NrVocI / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['o', NrVocO, FloatToStr((NrVocO / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['u', NrVocU, FloatToStr((NrVocU / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['a', NrVocA, FloatToStr((NrVocA / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['e', NrVocE, FloatToStr((NrVocE / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['i', NrVocI, FloatToStr((NrVocI / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['o', NrVocO, FloatToStr((NrVocO / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['u', NrVocU, FloatToStr((NrVocU / NrLitere) * 100)]));
+  Writeln(Format(MesajNrLitere, [NrLitere]));
   Readln;
 end.
 
