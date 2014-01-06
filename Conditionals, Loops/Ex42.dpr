@@ -7,11 +7,11 @@ uses
 const
   Litere: set of Char = ['A'..'Z'];
 var
-  NrVocA, NrVocE, NrVocI, NrVocO, NrVocU, i, NrLitere: Integer;
+  NrVocA, NrVocE, NrVocI, NrVocO, NrVocU, i, NrConsoane, NrLitere: Integer;
   Propozitie: string;
 resourcestring
   Mesaj = 'Vocala %s apare de %d (%s procente) ';
-  MesajNrLitere = 'Propozitia are %d litere ';
+  MesajNrConsoane = 'Propozitia are %d consoane ';
 begin
   Write('Propozitia: ');
   Readln(Propozitie);
@@ -20,6 +20,7 @@ begin
   NrVocI := 0;
   NrVocO := 0;
   NrVocU := 0;
+  NrConsoane := 0;
   NrLitere := 0;
   for i := 1 to Length(Propozitie) do
   begin
@@ -31,7 +32,7 @@ begin
         'I': Inc(NrVocI);
         'O': Inc(NrVocO);
         'U': Inc(NrVocU);
-      else ;
+      else Inc(NrConsoane);
       end;
       Inc(NrLitere);
     end;
@@ -41,7 +42,7 @@ begin
   Writeln(Format(Mesaj, ['i', NrVocI, FloatToStr((NrVocI / NrLitere) * 100)]));
   Writeln(Format(Mesaj, ['o', NrVocO, FloatToStr((NrVocO / NrLitere) * 100)]));
   Writeln(Format(Mesaj, ['u', NrVocU, FloatToStr((NrVocU / NrLitere) * 100)]));
-  Writeln(Format(MesajNrLitere, [NrLitere]));
+  Writeln(Format(MesajNrConsoane, [NrConsoane]));
   Readln;
 end.
 
