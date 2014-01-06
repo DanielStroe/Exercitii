@@ -25,7 +25,7 @@ begin
   for i := 1 to n do
   begin
     NFactorial := NFactorial * i;
-    suma := suma + NFactorial / n * x;
+    suma := suma + NFactorial / i * x;
   end;
   Writeln('1 + 1!/X + 2!/2*X + ... + N!/N*X = ' + floattostr(suma));
   Readln;
