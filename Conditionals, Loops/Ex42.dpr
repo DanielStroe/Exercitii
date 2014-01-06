@@ -4,8 +4,6 @@ program Ex42;
 
 uses
   SysUtils;
-const
-  Litere: set of Char = ['A'..'Z'];
 var
   NrVocA, NrVocE, NrVocI, NrVocO, NrVocU, i, NrConsoane, NrLitere: Integer;
   Propozitie: string;
@@ -24,7 +22,7 @@ begin
   NrLitere := 0;
   for i := 1 to Length(Propozitie) do
   begin
-    if UpCase(Propozitie[i]) in Litere then
+    if UpCase(Propozitie[i]) in ['A'..'Z'] then
     begin
       case UpCase(Propozitie[i]) of
         'A': Inc(NrVocA);
