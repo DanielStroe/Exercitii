@@ -3,21 +3,21 @@ program Ex32;
 {$APPTYPE CONSOLE}
 
 uses
-  SysUtils,Math;
+  SysUtils, Math;
 
 var
-  CubDeNr,nr:double;
+  CubDeNr, nr: double;
   litera: char;
 begin
   Write('Introduceti nr: ');
   Readln(nr);
   repeat
-    CubDeNr := Power(nr,3);
+    CubDeNr := Power(nr, 3);
     Writeln(floattostr(CubDeNr));
     Writeln('Doriti sa continuati? d/D - DA');
     Readln(litera);
     nr := CubDeNr;
-  until ((litera<>'d') and (litera<>'D'));
+  until ((litera <> 'd') and (litera <> 'D'));
   Readln;
 end.
 
