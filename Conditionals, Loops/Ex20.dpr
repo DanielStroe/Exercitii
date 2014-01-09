@@ -11,13 +11,13 @@ begin
   Readln(k);
   Write('Introduceti n: ');
   Readln(n);
-  while ((k > n) or (k<1)) do
+  while ((k > n) or (k < 1)) do
   begin
-  Writeln('1<k<n !!!!');
-  Write('Introduceti k: ');
-  Readln(k);
-  Write('Introduceti n: ');
-  Readln(n);
+    Writeln('1<k<n !!!!');
+    Write('Introduceti k: ');
+    Readln(k);
+    Write('Introduceti n: ');
+    Readln(n);
   end;
   NFactorial := 1;
   KFactorial := 1;

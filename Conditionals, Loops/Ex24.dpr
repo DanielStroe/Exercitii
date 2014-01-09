@@ -5,22 +5,23 @@ program Ex24;
 uses
   SysUtils;
 var
-  nr1, nr2: integer;
+  nr1, nr2, cmmdc, rest: integer;
 begin
   Writeln('Introduceti numerele: ');
   Readln(nr1);
   Readln(nr2);
-  while (nr1 <> nr2) do
+  rest := nr2;
+  while nr2 <>0 do
   begin
-    if nr1 > nr2 then
-      nr1 := nr1 - nr2
-    else
-      nr2 := nr2 - nr1;
+    rest := nr1 mod nr2;
+    nr1 := nr2;
+    nr2:= rest;
   end;
-  if nr1 = 1 then
+  cmmdc := nr1;
+  if cmmdc = 1 then
     Writeln('Numerele sunt prime intre ele!')
   else
-    Writeln('Cmmdc pt numerele introduse = ' + inttostr(nr1));
+    Writeln('Cmmdc pt numerele introduse = ' + inttostr(cmmdc));
   Readln;
 end.
 

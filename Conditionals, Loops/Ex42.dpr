@@ -4,13 +4,12 @@ program Ex42;
 
 uses
   SysUtils;
-const
-  Litere: set of Char = ['A'..'Z'];
 var
-  NrVocA, NrVocE, NrVocI, NrVocO, NrVocU, i, NrLitere: Integer;
+  NrVocA, NrVocE, NrVocI, NrVocO, NrVocU, i, NrConsoane, NrLitere: Integer;
   Propozitie: string;
 resourcestring
-  mesaj = 'Vocala %s apare de %d (%s procente) ';
+  Mesaj = 'Vocala %s apare de %d (%s procente) ';
+  MesajNrConsoane = 'Propozitia are %d consoane ';
 begin
   Write('Propozitia: ');
   Readln(Propozitie);
@@ -19,10 +18,11 @@ begin
   NrVocI := 0;
   NrVocO := 0;
   NrVocU := 0;
+  NrConsoane := 0;
   NrLitere := 0;
   for i := 1 to Length(Propozitie) do
   begin
-    if UpCase(Propozitie[i]) in Litere then
+    if UpCase(Propozitie[i]) in ['A'..'Z'] then
     begin
       case UpCase(Propozitie[i]) of
         'A': Inc(NrVocA);
@@ -30,16 +30,17 @@ begin
         'I': Inc(NrVocI);
         'O': Inc(NrVocO);
         'U': Inc(NrVocU);
-      else ;
+      else Inc(NrConsoane);
       end;
       Inc(NrLitere);
     end;
   end;
-  Writeln(Format(mesaj, ['a', NrVocA, FloatToStr((NrVocA / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['e', NrVocE, FloatToStr((NrVocE / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['i', NrVocI, FloatToStr((NrVocI / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['o', NrVocO, FloatToStr((NrVocO / NrLitere) * 100)]));
-  Writeln(Format(mesaj, ['u', NrVocU, FloatToStr((NrVocU / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['a', NrVocA, FloatToStr((NrVocA / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['e', NrVocE, FloatToStr((NrVocE / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['i', NrVocI, FloatToStr((NrVocI / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['o', NrVocO, FloatToStr((NrVocO / NrLitere) * 100)]));
+  Writeln(Format(Mesaj, ['u', NrVocU, FloatToStr((NrVocU / NrLitere) * 100)]));
+  Writeln(Format(MesajNrConsoane, [NrConsoane]));
   Readln;
 end.
 

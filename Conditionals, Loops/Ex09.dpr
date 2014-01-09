@@ -6,8 +6,10 @@ uses
   SysUtils;
 
 const
-  PunctStartDreptunghi = 1;
-  PunctStopDreptunghi = 5;
+  XPunctStartDreptunghi = 1;
+  XPunctStopDreptunghi = 5;
+  YPunctStartDreptunghi = 1;
+  YPunctStopDreptunghi = 5;
 var
   XPunct, YPunct: double;
 resourcestring
@@ -18,8 +20,8 @@ begin
   Write('Introduceti coordonata Y a punctului: ');
   Readln(YPunct);
 
-  if (((XPunct >= PunctStartDreptunghi) and (XPunct <= PunctStopDreptunghi)) and
-    ((YPunct >= PunctStartDreptunghi) and (YPunct <= PunctStopDreptunghi))) then
+  if (((XPunct >= XPunctStartDreptunghi) and (XPunct <= XPunctStopDreptunghi)) and
+    ((YPunct >= YPunctStartDreptunghi) and (YPunct <= YPunctStopDreptunghi))) then
     Writeln(Format(mesaj, ['se afla']))
   else
     Writeln(Format(mesaj, ['nu se afla']));
