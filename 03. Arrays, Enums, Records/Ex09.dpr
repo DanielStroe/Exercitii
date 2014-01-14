@@ -18,7 +18,7 @@ var
   i, aux, CastigateJucator1, CastigateJucator2: integer;
 const
   cCuloareCarte: array[1..4] of string = ('Romb', 'Trefla', 'Rosie', 'Neagra');
-  cCarti:array[0..12] of string = ('2','3','4','5','6','7','8','9','10','Juve','Dama','Popa','As');
+  cNumeCarti:array[0..12] of string = ('2','3','4','5','6','7','8','9','10','Juve','Dama','Popa','As');
 resourcestring
   cManaCastigataDeJucator = '   Mana castigata de jucatorul %d.';
   cEgalitate = '   Mana nu a fost castigata de nimeni.';
@@ -43,7 +43,7 @@ begin
       aux := 1 + random(52); //caut o carte care n-a mai fost extrasa
     until not ToateCartile[aux].Extrasa;
     CartiJucator1[i].NumarCarte := ToateCartile[aux].NumarCarte mod 13; //a i-a carte a juc 1 este cartea(aux) din tot pachetul
-    CartiJucator1[i].NumeCarte := cCarti[ToateCartile[aux].NumarCarte mod 13];
+    CartiJucator1[i].NumeCarte := cNumeCarti[ToateCartile[aux].NumarCarte mod 13];
     ToateCartile[aux].Extrasa := true; //a fost extrasa din pachet
     case ToateCartile[aux].NumarCarte of
       1..13: CartiJucator1[i].Culoare := 1;
@@ -60,7 +60,7 @@ begin
       aux := 1 + random(52); //caut o carte care n-a mai fost extrasa
     until not ToateCartile[aux].Extrasa;
     CartiJucator2[i].NumarCarte := ToateCartile[aux].NumarCarte mod 13; //a i-a carte a juc 1 este cartea(aux) din tot pachetul
-    CartiJucator2[i].NumeCarte := cCarti[ToateCartile[aux].NumarCarte mod 13];
+    CartiJucator2[i].NumeCarte := cNumeCarti[ToateCartile[aux].NumarCarte mod 13];
     ToateCartile[aux].Extrasa := true; //a fost extrasa din pachet
     case ToateCartile[aux].NumarCarte of
       1..13: CartiJucator2[i].Culoare := 1;
