@@ -26,7 +26,7 @@ resourcestring
   cCastigatorMeci = '   Meciul a fost castigat de jucatorul %d.';
   cEgalitateMeci = 'Meciul s-a terminat egal.';
 begin
-//Am impartit pachetul de carti in 4 , de la 1 la 13 sunt cartile de romb, 13..26 trefla si tot asa..
+//Am impartit pachetul de carti in 4 , de la 1 la 13 sunt cartile de romb, 13..26 trefla si tot asa..(idee de la Ciprian)
   Randomize;
   for i := 1 to 52 do
   begin
